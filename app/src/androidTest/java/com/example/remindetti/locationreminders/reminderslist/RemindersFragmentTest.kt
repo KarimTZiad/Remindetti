@@ -79,6 +79,12 @@ class RemindersFragmentTest : TestCase(){
                     hasDescendant(withText(rem1.title))
                 )
             )
+        onView(withId(R.id.reminderssRecyclerView))
+            .perform(
+                RecyclerViewActions.scrollTo<RecyclerView.ViewHolder>(
+                    hasDescendant(withText(rem2.title))
+                )
+            )
     }
 
 }
