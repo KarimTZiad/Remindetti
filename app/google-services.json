@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "582543602700",
+    "project_id": "remindetti",
+    "storage_bucket": "remindetti.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:582543602700:android:c32de754d9989a775fea29",
+        "android_client_info": {
+          "package_name": "com.example.remindetti"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "582543602700-l2h8n8mvs1qe2qq22i494upm8r4ckpi6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.remindetti",
+            "certificate_hash": "e04eae12e3191dc35dc376eae01ee30797594737"
+          }
+        },
+        {
+          "client_id": "582543602700-07oivup0fp6um6sk448b79t5gq3vjgbc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCPO67jjD02IS059wyscxQppd4bpEEep38"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "582543602700-07oivup0fp6um6sk448b79t5gq3vjgbc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
