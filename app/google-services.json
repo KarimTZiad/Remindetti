@@ -7,17 +7,17 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:582543602700:android:c32de754d9989a775fea29",
+        "mobilesdk_app_id": "1:582543602700:android:33337561792c0f7c5fea29",
         "android_client_info": {
-          "package_name": "com.example.remindetti"
+          "package_name": "com.udacity.project4"
         }
       },
       "oauth_client": [
         {
-          "client_id": "582543602700-l2h8n8mvs1qe2qq22i494upm8r4ckpi6.apps.googleusercontent.com",
+          "client_id": "582543602700-ja4srinh3o2jo9mrev78f65td3no7hkc.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.example.remindetti",
+            "package_name": "com.udacity.project4",
             "certificate_hash": "e04eae12e3191dc35dc376eae01ee30797594737"
           }
         },
