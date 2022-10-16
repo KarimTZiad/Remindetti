@@ -1,9 +1,17 @@
 package com.udacity.project4
 
 import android.app.Application
+import androidx.recyclerview.widget.RecyclerView
+import androidx.test.core.app.ActivityScenario
 import androidx.test.core.app.ApplicationProvider.getApplicationContext
+import androidx.test.espresso.Espresso.onView
+import androidx.test.espresso.action.ViewActions.*
+import androidx.test.espresso.assertion.ViewAssertions.matches
+import androidx.test.espresso.contrib.RecyclerViewActions
+import androidx.test.espresso.matcher.ViewMatchers.*
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.filters.LargeTest
+import com.udacity.project4.locationreminders.RemindersActivity
 import com.udacity.project4.locationreminders.data.ReminderDataSource
 import com.udacity.project4.locationreminders.data.local.LocalDB
 import com.udacity.project4.locationreminders.data.local.RemindersLocalRepository
@@ -12,6 +20,7 @@ import com.udacity.project4.locationreminders.savereminder.SaveReminderViewModel
 import kotlinx.coroutines.runBlocking
 import org.junit.jupiter.api.AfterEach
 import org.junit.jupiter.api.BeforeEach
+import org.junit.jupiter.api.Test
 import org.junit.runner.RunWith
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.core.context.GlobalContext
@@ -70,6 +79,29 @@ class RemindersActivityTest {// Extended Koin Test - embed autoclose @after meth
     }
 
 
-//    TODO: add End to End testing to the app
+    //    TODO: add End to End testing to the app
+    @Test
+    fun createReminder_savesReminder() = runBlocking {
+        val activityScenario = ActivityScenario.launch(RemindersActivity::class.java)
+
+        onView(withId(R.id.noDataTextView)).check(matches(isDisplayed()))
+        onView(withId(R.id.addReminderFAB)).perform(click())
+        onView(withId(R.id.reminderTitle)).perform(replaceText("rem1"))
+        onView(withId(R.id.reminderDescription)).perform(replaceText("Reminder 1"))
+        onView(withId(R.id.selectLocation)).perform(click())
+
+        onView(withId(R.id.map)).perform(longClick())
+        onView(withId(R.id.saveLocation)).perform(click())
+        onView(withId(R.id.saveReminder)).perform(click())
+
+        onView(withId(R.id.reminderssRecyclerView))
+            .perform(
+                RecyclerViewActions.scrollTo<RecyclerView.ViewHolder>(
+                    hasDescendant(withText("rem1"))
+                )
+            )
+
+        activityScenario.close()
+    }
 
 }
